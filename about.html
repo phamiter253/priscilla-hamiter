@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Priscilla Hamiter</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+	<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+	<nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #f2f3f4; padding-left: 20px; padding-right: 20px">
+
+	  <div class="navbar-menu">
+	    <div class="navbar-start">
+	      <a href="index.html" class="navbar-item">
+	        Home
+	      </a>
+
+	      <a href="data.html" class="navbar-item">
+	        Datasets
+	      </a>
+	    </div>
+
+	    <div class="navbar-end">
+	      <a href="about.html" class="navbar-item">
+	        About & Contact Infomation
+	      </a>
+	    </div>
+	  </div>
+	</nav>
+
+
+
+	<section style="padding: 60px">
+		<div class="container">
+			<div class="content">
+				<!-- <h1 style="font-size: 80px">A</h1> -->
+				<div class="columns">
+					<div class="column">
+						<p style="font-size: 60px; line-height: 50px">Priscilla Hamiter</p>
+						<div>
+							<p>Software</p>
+						  <div class="tags" style="padding-right: 40px;">
+			                <span class="tag is-primary">AutoCAD</span>
+			                <span class="tag is-primary">Photoshop</span>
+			                <span class="tag is-primary">Animate</span>
+			                <span class="tag is-primary">PowerPoint</span>
+			                <span class="tag is-primary">Excel</span>
+			                <span class="tag is-primary">Word</span>
+			                <span class="tag is-primary">Tableau</span>
+			              </div>
+							<p>Languages</p>
+							<div class="tags" style="padding-right: 40px">
+								<span class="tag is-primary">English</span>
+								<span class="tag is-primary">Japanese</span>
+								<span class="tag is-primary">French</span>
+								<span class="tag is-primary">HTML</span>
+				                <span class="tag is-primary">CSS</span>
+				                <span class="tag is-primary">Python</span>
+				                <span class="tag is-primary">C</span>
+				                <span class="tag is-primary">Java</span>
+				                <span class="tag is-primary">JavaScript</span>
+				                <span class="tag is-primary">ARM Assembly</span>
+				                <span class="tag is-primary">SVG</span>
+				              </div>
+				             <p>Libraries</p>
+				             <div class="tags">
+								<span class="tag is-primary">D3</span>
+								<span class="tag is-primary">Pandas</span>
+				              </div>
+						</div>
+					</div>
+					<div class="column">
+						<section class="hero is-large" style="background-image: url('assets/pictures/profile.jpg'); background-size: cover;">
+							<div class="hero-body" style="padding: 60px;">
+								<p style="margin-top: 500px"></p>
+								<!-- <p style="font-size: 60px; color: white; line-height: 40px; margin-bottom: 20px; padding-bottom: 0px;">Priscilla Hamiter</p> -->
+								<!-- <p style="font-size: 20px; line-height: 30px; color: white">USF 2020<br/>Computer Science Major<br/>Data Visualization<br/>Website Design<br/>Game Design<br/>Webcomics<br/>Art</p> -->
+							</div>
+						</section>
+
+						<!-- <img src="assets/pictures/profile.jpg"> -->
+					</div>
+				</div>
+				
+
+
+			</div>
+		</div>
+	</section>
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', () => {
+
+		  // Get all "navbar-burger" elements
+		  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+		  // Check if there are any navbar burgers
+		  if ($navbarBurgers.length > 0) {
+
+		    // Add a click event on each of them
+		    $navbarBurgers.forEach( el => {
+		      el.addEventListener('click', () => {
+
+		        // Get the target from the "data-target" attribute
+		        const target = el.dataset.target;
+		        const $target = document.getElementById(target);
+
+		        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+		        el.classList.toggle('is-active');
+		        $target.classList.toggle('is-active');
+
+		      });
+		    });
+		  }
+
+		});
+	</script>
+
+</body>
+</html>

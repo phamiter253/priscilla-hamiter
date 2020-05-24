@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Priscilla Hamiter</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+
+	<!-- include d3.js v5 -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <!-- include d3.js modules -->
+    <script src="https://d3js.org/d3-array.v2.min.js"></script>
+    <script src="https://d3js.org/d3-fetch.v1.min.js"></script>
+    <script src="https://d3js.org/d3-time.v1.min.js"></script>
+    <script src="https://d3js.org/d3-time-format.v2.min.js"></script>
+
+	<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+	<nav class="navbar" role="navigation" aria-label="main navigation" style="background-color: #f2f3f4; padding-left: 20px; padding-right: 20px">
+
+	  <div class="navbar-menu">
+	    <div class="navbar-start">
+	      <a href="index.html" class="navbar-item">
+	        Home
+	      </a>
+
+	      <a  href="data.html" class="navbar-item">
+	        Datasets
+	      </a>
+
+	    </div>
+
+	    <div class="navbar-end">
+	      <a href="about.html" class="navbar-item">
+	        About & Contact Infomation
+	      </a>
+	    </div>
+	  </div>
+	</nav>
+
+
+
+	<section style="padding: 60px">
+		<div class="container">
+			<div class="content">
+				<h1 style="font-size: 80px">80 Cereals</h1>
+
+
+				<div class="columns">
+					<div class="column">
+						<svg id="cereal" width="800" height="800">
+							<circle id="bowlout" cx="400" cy="400" r="400" stroke="none" fill="#45b6fe" />
+							<circle id="bowlin" cx="400" cy="400" r="380" stroke="none" fill="#2a9df4" />
+							<circle id="milkout" cx="400" cy="400" r="350" stroke="none" fill="white" />
+							<image href="assets/pictures/cereal/spoon.png" height="400" width="400" transform="rotate(180, 200,150)"/>
+							<circle id="milkin" cx="400" cy="400" r="320" stroke="none" fill="white" />
+						</svg>
+						<script type="text/javascript" src="javascript/cereal.js"></script>
+					</div>
+					<div style="padding: 60px">
+						<div id="cerealInfo"></div>
+
+						<p class="title">Overview</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+				</div>
+
+
+				<div>
+			<hr style="background-color: #cccccc"></hr>
+			<ol>
+				<li><a href="http://www.pngplay.com/image/18075">Single Spoon Transparent Background</a>, http://www.pngplay.com/image/18075</li>
+				<li><a href="https://www.clementsmarket.com/shop/grocery/cereal_and_breakfast_foods/cereal/quaker_oat_bran_cereal/p/543831">Quaker Oat Bran Cereal</a>, https://www.clementsmarket.com/shop/grocery/cereal_and_breakfast_foods/cereal/quaker_oat_bran_cereal/p/543831</li>
+			</ol>
+		</div>
+				
+
+			</div>
+		</div>
+		
+	</section>
+	
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', () => {
+
+		  // Get all "navbar-burger" elements
+		  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+		  // Check if there are any navbar burgers
+		  if ($navbarBurgers.length > 0) {
+
+		    // Add a click event on each of them
+		    $navbarBurgers.forEach( el => {
+		      el.addEventListener('click', () => {
+
+		        // Get the target from the "data-target" attribute
+		        const target = el.dataset.target;
+		        const $target = document.getElementById(target);
+
+		        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+		        el.classList.toggle('is-active');
+		        $target.classList.toggle('is-active');
+
+		      });
+		    });
+		  }
+
+		});
+	</script>
+
+</body>
+</html>
