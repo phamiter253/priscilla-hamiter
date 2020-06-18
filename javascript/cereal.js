@@ -1,4 +1,4 @@
-d3.csv("data/cereal.csv").then(function(csv) {
+d3.csv("/data/cereal.csv").then(function(csv) {
 
 	const svg = d3.select("#cereal");
 
@@ -15,17 +15,18 @@ d3.csv("data/cereal.csv").then(function(csv) {
   
   let simulation = d3.forceSimulation();
 
-  width = 320;
-  height = 320;
+  width = 300;
+  height = 300;
   
   simulation = simulation
-    .force("collide", d3.forceCollide(34).iterations(12))
+    .force("collide", d3.forceCollide(30).iterations(12))
     .force("charge", d3.forceManyBody())
     .velocityDecay(0.75)
     .alphaDecay(0.006)
-    .force("center", d3.forceCenter(400, 400))
+    .force("center", d3.forceCenter(350, 450))
     .force("y", d3.forceY(0))
     .force("x", d3.forceX(0))
+    
 
   
   const ticked = () => {
@@ -45,13 +46,13 @@ d3.csv("data/cereal.csv").then(function(csv) {
       .attr("width", 20)
       .append("svg:image")
       .attr("xlink:href", "assets/pictures/cereal/oatquaker.png")
-      .attr("height", 60)
-      .attr("width", 60);
+      .attr("height", 40)
+      .attr("width", 40);
   
   const node = nodes.selectAll("circle")
       .data(simulation.nodes(), d => d.name)
       .enter().append("circle")
-      .attr("r", 30)
+      .attr("r", 20)
       .attr("fill", function(d){
         if(d.name == "100% Natural Bran"){
             return "url(#image)";
@@ -62,11 +63,14 @@ d3.csv("data/cereal.csv").then(function(csv) {
       .on("mouseover", function(d){
         //console.log(d)
         div.html(`<p>${d.name}</p>`)
-         .style("width", "250px")
-        .style("height", "150px")
-        .style("left", (d.x + 155) + "px")
-        .style("top", (d.y + 65) + "px")
+         .style("width", "200px")
+        .style("height", "100px")
+        .style("left", (d.x - 10) + "px")
+        .style("top", (d.y + 5) + "px")
         .style("visibility", "visible");
+      })
+      .on("mouseout", function(d){
+        div.style("visibility", "hidden");
       });
 	
 	//console.log(csv);
