@@ -4,6 +4,13 @@ d3.csv("/data/cereal.csv").then(function(csv) {
 
   const details = d3.select("#cerealInfo");
 
+  const body = details.append("xhtml:body")
+    .style("text-align", "left")
+    .style("background", "none")
+    .html("<p>N/A</p>");
+
+  details.style("visibility", "hidden");
+
   div = d3.select("body").append("div")
     .attr("class", "tooltip")
     .style("width", "0px")
@@ -27,8 +34,6 @@ d3.csv("/data/cereal.csv").then(function(csv) {
     .force("y", d3.forceY(0))
     .force("x", d3.forceX(0))
     
-
-  
   const ticked = () => {
     nodes.selectAll("circle")
       .attr("cx", d => d.x)
@@ -60,13 +65,41 @@ d3.csv("/data/cereal.csv").then(function(csv) {
           return "black";
         }
       })
+      .on("click", function(d){
+        type = d.type == "C" ? "Cold Cereal" : "Hot Cereal";
+        manufacture = "";
+
+        const html = `
+          <div class="tile" style="margin-bottom: 50px">
+            <div class="columns">
+              <div class="column is-2">
+                <img src="${d.boxImage}" width="200" height="auto"></img>
+              </div>
+              <div class="column">
+                <p class="title">${d.name}</p>
+                <hr></hr>
+                <div class="level">
+                  <p class="text"><strong>Manufacturer:</strong> ${d.mfr}</p>
+                  <p class="text"><strong>Type:</strong> ${type}</p>
+                  <p class="text"><strong>Rating:</strong> ${d.rating}</p>
+                </div>
+                <svg width="100" height="100">
+                  <img src="assets/pictures/cereal/cup.png" width="300" height="auto"></img>
+                </svg>
+              </div>
+            </div>
+          </div>
+        `
+        body.html(html);
+        details.style("visibility", "visible");
+      })
       .on("mouseover", function(d){
         //console.log(d)
-        div.html(`<p>${d.name}</p>`)
-         .style("width", "200px")
-        .style("height", "100px")
-        .style("left", (d.x - 10) + "px")
-        .style("top", (d.y + 5) + "px")
+        div.html(`<p class="text" style="font-size: 12px">${d.name}</p>`)
+         .style("width", "120px")
+        .style("height", "60px")
+        .style("left", (d.x + 30) + "px")
+        .style("top", (d.y +50) + "px")
         .style("visibility", "visible");
       })
       .on("mouseout", function(d){
