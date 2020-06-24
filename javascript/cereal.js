@@ -1,4 +1,4 @@
-d3.csv("/data/cereal.csv").then(function(csv) {
+d3.csv("data/cereal.csv").then(function(csv) {
 
 	const svg = d3.select("#cereal");
 
@@ -68,9 +68,34 @@ d3.csv("/data/cereal.csv").then(function(csv) {
       .on("click", function(d){
         type = d.type == "C" ? "Cold Cereal" : "Hot Cereal";
         manufacture = "";
+        switch(d.mfr){
+          case "A":
+            manufacture = "American Home Food Products";
+            break;
+          case "G":
+            manufacture = "General Mills";
+            break;
+          case "K":
+            manufacture = "Kelloggs";
+            break;
+          case "N":
+            manufacture = "Nabisco";
+            break;
+          case "P":
+            manufacture = "Post";
+            break;
+          case "Q":
+            manufacture = "Quaker Oats";
+            break;
+          case "R":
+            manufacture = "Ralston Purina";
+            break;
+          default:
+            manufacture = "";
+        }
 
         const html = `
-          <div class="tile" style="margin-bottom: 50px">
+          <div class="tile">
             <div class="columns">
               <div class="column is-2">
                 <img src="${d.boxImage}" width="200" height="auto"></img>
@@ -79,19 +104,123 @@ d3.csv("/data/cereal.csv").then(function(csv) {
                 <p class="title">${d.name}</p>
                 <hr></hr>
                 <div class="level">
-                  <p class="text"><strong>Manufacturer:</strong> ${d.mfr}</p>
+                  <p class="text"><strong>Manufacturer:</strong> ${manufacture}</p>
                   <p class="text"><strong>Type:</strong> ${type}</p>
                   <p class="text"><strong>Rating:</strong> ${d.rating}</p>
                 </div>
-                <svg width="100" height="100">
-                  <img src="assets/pictures/cereal/cup.png" width="300" height="auto"></img>
-                </svg>
               </div>
+            </div>
+          </div>
+          <div class="columns" style="margin-bottom: 20px;">
+            <div class="column">
+
+              <section class="performance-facts" style="margin:0px">
+                <header class="performance-facts__header">
+                  <h1 class="performance-facts__title">Nutrition Facts</h1>
+                  <p style="line-height:14px">Serving Size ${d.cups} cup
+                </header>
+                <table class="performance-facts__table">
+                  <thead>
+                    <tr>
+                      <th colspan="3" class="small-info" style="line-height: 8px">
+                        Amount Per Serving
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th colspan="2" style="line-height:12px">
+                        <b>Calories</b>
+                        ${d.calories}
+                      </th>
+                    </tr>
+                    <tr class="thick-row">
+                    </tr>
+                    <tr>
+                      <th colspan="2" style="line-height:12px">
+                        <b>Total Fat</b>
+                        ${d.fat}g
+                      </th>
+                    </tr>
+                    <tr>
+                      <th colspan="2" style="line-height:12px">
+                        <b>Sodium</b>
+                        ${d.sodium}mg
+                      </th>
+                    </tr>
+                    <tr>
+                      <th colspan="2" style="line-height:12px">
+                        <b>Total Carbohydrate</b>
+                        ${d.carbo}g
+                      </th>
+                    </tr>
+                    <tr>
+                      <td class="blank-cell">
+                      </td>
+                      <th style="line-height:12px">
+                        Dietary Fiber
+                        ${d.fiber}g
+                      </th>
+                    </tr>
+                    <tr>
+                      <td class="blank-cell">
+                      </td>
+                      <th style="line-height:12px">
+                        Sugars
+                        ${d.sugars}g
+                      </th>
+                    </tr>
+                    <tr class="thick-end">
+                      <th colspan="2" style="line-height:12px">
+                        <b>Protein</b>
+                        ${d.protein}g
+                      </th>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <table class="performance-facts__table--grid" style="margin-bottom:0px">
+                  <tbody>
+                    <tr>
+                      <td colspan="2" style="line-height:12px">
+                        Vitamins
+                        ${d.vitamins}%
+                      </td>
+                      <td style="line-height:12px">
+                        Potassium
+                        ${d.potass}mg
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </section>
+            </div>
+            <div class="column is-8">
+              <svg width="550px" height="270px" style="background-color: blue"></svg>
             </div>
           </div>
         `
         body.html(html);
         details.style("visibility", "visible");
+
+        /*cup = d3.select("#cup");
+        <--<svg id="cup" width="300" height="230"></svg>-->
+        cup.style("background", "url('assets/pictures/cereal/cup.png')")
+          .style("background-size", "contain")
+          .style("background-repeat", "no-repeat")
+          .style("margin-bottom", "50px")
+
+        var y = d3.scaleLinear()
+          .domain([0, 4])
+          .range([195,30])
+
+        cup.append("g")
+          .attr("transform", "translate(150,0)")
+          .call(d3.axisLeft(y))*/
+
+
+
+
       })
       .on("mouseover", function(d){
         //console.log(d)
