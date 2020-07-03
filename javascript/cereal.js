@@ -15,6 +15,7 @@ d3.csv("data/cereal.csv").then(function(csv) {
     .attr("class", "tooltip")
     .style("width", "0px")
     .style("height", "0px")
+    .style("padding", "0px")
     .style("visibility", "hidden");
  
  
@@ -223,9 +224,10 @@ d3.csv("data/cereal.csv").then(function(csv) {
         //console.log(d)
         div.html(`<p class="text" style="font-size: 12px">${d.name}</p>`)
          .style("width", "120px")
-        .style("height", "60px")
+        .style("height", "40px")
         .style("left", (d.x + 30) + "px")
-        .style("top", (d.y +50) + "px")
+        .style("top", (d.y +550) + "px")
+        .style("padding", "6px")
         .style("visibility", "visible");
       })
       .on("mouseout", function(d){
