@@ -111,7 +111,7 @@ d3.csv("data/cereal.csv").then(function(csv) {
               </div>
             </div>
           </div>
-          <div class="columns" style="margin-bottom: 20px;">
+          <div class="columns">
             <div class="column">
 
               <section class="performance-facts" style="margin:0px">
@@ -195,31 +195,28 @@ d3.csv("data/cereal.csv").then(function(csv) {
                 </table>
               </section>
             </div>
-            <div class="column is-8">
-              <svg width="550px" height="270px" style="background-color: blue"></svg>
+            <div class="column">
+              <svg id="cup" width="300" height="270" style="margin-top: 50px"></svg>
+            </div>
+            <div class="column">
+              <svg width="300px" height="270px" style="background-color: blue"></svg>
             </div>
           </div>
         `
         body.html(html);
         details.style("visibility", "visible");
 
-        /*cup = d3.select("#cup");
-        <--<svg id="cup" width="300" height="230"></svg>-->
+        cup = d3.select("#cup");
         cup.style("background", "url('assets/pictures/cereal/cup.png')")
           .style("background-size", "contain")
           .style("background-repeat", "no-repeat")
-          .style("margin-bottom", "50px")
-
         var y = d3.scaleLinear()
           .domain([0, 4])
           .range([195,30])
 
         cup.append("g")
           .attr("transform", "translate(150,0)")
-          .call(d3.axisLeft(y))*/
-
-
-
+          .call(d3.axisLeft(y))
 
       })
       .on("mouseover", function(d){
