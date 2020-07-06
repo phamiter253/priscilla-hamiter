@@ -608,3 +608,143 @@ li.citation{
     box-shadow: 0 0 0 0 #333, 0 0 0 0 rgba(51, 51, 51, 0);
   }
 }
+
+/* The device with borders */
+.smartphone {
+  position: relative;
+  width: 360px;
+  height: 640px;
+  margin: auto;
+  border: 16px black solid;
+  border-top-width: 60px;
+  border-bottom-width: 60px;
+  border-radius: 36px;
+}
+
+/* The horizontal line on the top of the device */
+.smartphone:before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 5px;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 10px;
+}
+
+/* The circle on the bottom of the device */
+.smartphone:after {
+  content: '';
+  display: block;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 50%;
+  bottom: -65px;
+  transform: translate(-50%, -50%);
+  background: #333;
+  border-radius: 50%;
+}
+
+/* The screen (or content) of the device */
+.smartphone .content {
+  width: 360px;
+  height: 640px;
+  background: white;
+}
+
+.calendar {
+  display: grid;
+  width: 100%;
+  height: auto;
+  grid-template-columns: repeat(7, minmax(70px, 1fr));
+  grid-template-rows: 0px;
+  grid-auto-rows: 70px;
+  overflow: hidden;
+}
+.calendar-container {
+  width: 90%;
+  overflow: hidden;
+  max-width: 1200px;
+  margin-bottom: 30px;
+}
+.calendar-header {
+  text-align: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(166, 168, 179, 0.12);
+}
+.calendar-header h1 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.day {
+  border-bottom: 1px solid rgba(166, 168, 179, 0.12);
+  border-right: 1px solid rgba(166, 168, 179, 0.12);
+  text-align: right;
+  padding: 10px 15px;
+  letter-spacing: 1px;
+  font-size: 12px;
+  box-sizing: border-box;
+  color: #98a0a6;
+  position: relative;
+  pointer-events: none;
+  z-index: 1;
+}
+.day:nth-of-type(7n + 7) {
+  border-right: 0;
+}
+.day:nth-of-type(n + 1):nth-of-type(-n + 7) {
+  grid-row: 2;
+}
+.day:nth-of-type(n + 8):nth-of-type(-n + 14) {
+  grid-row: 3;
+}
+.day:nth-of-type(n + 15):nth-of-type(-n + 21) {
+  grid-row: 4;
+}
+.day:nth-of-type(n + 22):nth-of-type(-n + 28) {
+  grid-row: 5;
+}
+.day:nth-of-type(n + 29):nth-of-type(-n + 35) {
+  grid-row: 6;
+}
+.day:nth-of-type(7n + 1) {
+  grid-column: 1/1;
+}
+.day:nth-of-type(7n + 2) {
+  grid-column: 2/2;
+}
+.day:nth-of-type(7n + 3) {
+  grid-column: 3/3;
+}
+.day:nth-of-type(7n + 4) {
+  grid-column: 4/4;
+}
+.day:nth-of-type(7n + 5) {
+  grid-column: 5/5;
+}
+.day:nth-of-type(7n + 6) {
+  grid-column: 6/6;
+}
+.day:nth-of-type(7n + 7) {
+  grid-column: 7/7;
+}
+.day-name {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #99a1a7;
+  text-align: center;
+  border-bottom: 1px solid rgba(166, 168, 179, 0.12);
+  line-height: 50px;
+  font-weight: 500;
+}
+.day--disabled {
+  color: rgba(152, 160, 166, 0.6);
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f9f9fa' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+  cursor: not-allowed;
+}

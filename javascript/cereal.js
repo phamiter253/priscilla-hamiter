@@ -2,7 +2,59 @@ d3.csv("data/cereal.csv").then(function(csv) {
 
 	const svg = d3.select("#cereal");
 
+  const svg1 = d3.select("#allpara");
+
   const details = d3.select("#cerealInfo");
+
+
+  var margin = {top}
+
+  const keys = ["American Home Food Products", "General Mills", "Kelloggs", "Nabisco", "Post", "Quaker Oats", "Ralston Purina"];
+
+  var color = d3.scaleOrdinal(d3.schemeCategory10)
+    .domain(keys)
+
+
+  const dimensions = ["Protein", "Fat", "Sodium", "Fiber", "Carbohydrate", "Sugars", "Potassium", "Vitamins"]
+
+  /*var y ={}
+  for( i in dimensions){
+    name = dimens
+  }*/
+/*
+ const legend = svg1.append("g")
+        .attr("class", "legend")
+        .attr("transform", "translate(7, 0)")
+
+    const lg = legend.selectAll('g')
+      .data(keys)
+      .enter()
+    .append('g')
+      .attr('transform', (d,i) => `translate(${i * 100},${300 - 170})`);
+
+    lg.append('rect')
+      .attr('x', 0)
+      .attr('y', 0)
+      .attr('width', 10)
+      .attr('height', 10)
+      .attr("fill", function(d,i) { return color(i)});
+
+    lg.append('text')
+      .style('font-family', 'Georgia')
+      .style('font-size', '13px')
+      .attr('x', 17.5)
+      .attr('y', 10)
+      .text(d => d);
+
+    let offset = 0;
+    
+    lg.attr('transform', function(d, i) {
+        let x = offset;
+        offset += nodeWidth(this) + 10;
+        return `translate(${x},${300 - 265})`;
+    });*/
+
+
 
   const body = details.append("xhtml:body")
     .style("text-align", "left")
@@ -95,6 +147,18 @@ d3.csv("data/cereal.csv").then(function(csv) {
             manufacture = "";
         }
 
+        shelfpos = "";
+        switch(d.shelf){
+          case "1":
+            shelfpos = "170px";
+            break;
+          case "2":
+            shelfpos = "100px";
+            break;
+          default:
+            shelfpos = "30px";
+        }
+        console.log(shelfpos);
         const html = `
           <div class="tile">
             <div class="columns">
@@ -199,8 +263,9 @@ d3.csv("data/cereal.csv").then(function(csv) {
             <div class="column">
               <svg id="cup" width="300" height="270" style="margin-top: 50px"></svg>
             </div>
-            <div class="column">
-              <svg width="300px" height="270px" style="background-color: blue"></svg>
+            <div class="column" style="position: relative; top: 0; left: 0;">
+              <img src="assets/pictures/cereal/shelf.svg" width="300px" height="300px" id="shelf" style="position: relative; top: 0; left: 0;">
+              <img src="${d.boxImage}" width="45" height="auto" style="position: absolute; top: ${shelfpos}; left: 120px; z-index: 2"></img>
             </div>
           </div>
         `
