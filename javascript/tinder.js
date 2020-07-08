@@ -1,3 +1,11 @@
+$('.scroll').scroll(function() {
+  if ($(this).scrollTop() > 30) {
+    $('.demo__card__name').fadeOut();
+  } else {
+    $('.demo__card__name').fadeIn();
+  }
+});
+
 $(document).ready(function() {
 
   var animating = false;

@@ -895,6 +895,7 @@ li.citation{
 }
 
 .profile-margin {
+  z-index: 30;
   margin: 16px;
 }
 
@@ -902,4 +903,13 @@ li.citation{
   font-family: 'Varela Round', sans-serif;
   font-size: 2rem;
   font-weight: bold;
+}
+
+.scroll{
+  margin-top: 0px;
+  border-radius: 10px;
+  overflow-y: scroll;
+  width: 288px;
+  height: 400px;
+  background-color: white;
 }
