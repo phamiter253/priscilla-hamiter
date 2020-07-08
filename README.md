@@ -34,3 +34,5 @@ Other References
 + GitHub Icon Image - https://github.com/logos
 
 + w3 Schools Icon Image - https://www.reddit.com/r/SiliconValleyHBO/comments/espvc3/w3schools_official_logo_reminds_me_of_someones/
+
++ Spotify Icon - https://www.flaticon.com/free-icon/spotify_174872

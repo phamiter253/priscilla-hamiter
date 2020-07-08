@@ -837,10 +837,11 @@ li.citation{
 }
 .demo__card__choice {
   position: absolute;
+  border-radius: 10px;
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: 80%;
   opacity: 0;
 }
 .demo__card__choice:before {
@@ -884,11 +885,21 @@ li.citation{
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: 80%;
   cursor: -webkit-grab;
   cursor: grab;
 }
 .demo__tip {
   text-align: center;
   font-size: 2.2rem;
+}
+
+.profile-margin {
+  margin: 16px;
+}
+
+.profile-title {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
 }
