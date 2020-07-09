@@ -32,8 +32,19 @@ $(document).ready(function() {
 
     if (pullDeltaX >= decisionVal) {
       $card.addClass("to-right");
+      var input = $card[0].id;
+      var arr = input.split(",");
+      //console.log("nope");
+      //console.log(arr[0]+","+arr[1]);
+      document.getElementById(arr[1]).style.fill = "green"
+
     } else if (pullDeltaX <= -decisionVal) {
       $card.addClass("to-left");
+      var input = $card[0].id;
+      var arr = input.split(",");
+      //console.log("nope");
+      //console.log(arr[0]+","+arr[1]);
+      document.getElementById(arr[1]).style.fill = "red"
     }
 
     if (Math.abs(pullDeltaX) >= decisionVal) {

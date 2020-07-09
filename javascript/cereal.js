@@ -176,7 +176,7 @@ d3.csv("data/cereal.csv").then(function(csv) {
               </div>
             </div>
           </div>
-          <div class="columns" style="margin-bottom: 50px">
+          <div class="columns" style="margin-bottom: 30px">
             <div class="column">
 
               <section class="performance-facts" style="margin:0px">
