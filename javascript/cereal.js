@@ -176,7 +176,7 @@ d3.csv("data/cereal.csv").then(function(csv) {
               </div>
             </div>
           </div>
-          <div class="columns">
+          <div class="columns" style="margin-bottom: 50px">
             <div class="column">
 
               <section class="performance-facts" style="margin:0px">
@@ -261,9 +261,13 @@ d3.csv("data/cereal.csv").then(function(csv) {
               </section>
             </div>
             <div class="column">
-              <svg id="cup" width="300" height="270" style="margin-top: 50px"></svg>
+              <div style="position: relative; top: 0; left: 0; width: 300px; margin-top: 40px">
+                <img src="assets/pictures/cereal/cup.png" width="300px" height="300px" style="z-index: 3; position: absolute">
+                <svg id="cup" width="300px" height="220px" style="z-index:1; position: absolute;"></svg>
+              </div>
+              
             </div>
-            <div class="column" style="position: relative; top: 0; left: 0;">
+            <div class="column" style="position: relative; top: 0; left: 0; width: 300px">
               <img src="assets/pictures/cereal/shelf.svg" width="300px" height="300px" id="shelf" style="position: relative; top: 0; left: 0;">
               <img src="${d.boxImage}" width="45" height="auto" style="position: absolute; top: ${shelfpos}; left: 120px; z-index: 2"></img>
             </div>
@@ -273,12 +277,20 @@ d3.csv("data/cereal.csv").then(function(csv) {
         details.style("visibility", "visible");
 
         cup = d3.select("#cup");
-        cup.style("background", "url('assets/pictures/cereal/cup.png')")
-          .style("background-size", "contain")
-          .style("background-repeat", "no-repeat")
+        
         var y = d3.scaleLinear()
           .domain([0, 4])
-          .range([195,30])
+          .range([205,25])
+
+        
+
+        cup.append("g")
+          .append("rect")
+          .attr("x", 0)
+          .attr("y",  y(d.cups))
+          .attr("width", 300)
+          .attr("fill", "#d2b48c")
+          .attr("height", 300 - y(d.cups))
 
         cup.append("g")
           .attr("transform", "translate(150,0)")
@@ -291,7 +303,7 @@ d3.csv("data/cereal.csv").then(function(csv) {
          .style("width", "120px")
         .style("height", "40px")
         .style("left", (d.x + 30) + "px")
-        .style("top", (d.y +550) + "px")
+        .style("top", (d.y +1350) + "px")
         .style("padding", "6px")
         .style("visibility", "visible");
       })

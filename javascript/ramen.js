@@ -7,9 +7,9 @@ d3.csv("data/ramen.csv").then(function(csv){
     	return air[0];
     	 })
     .key(function(d) { return d.genre; })*/
-    .key(function(d) { 
+    /*.key(function(d) { 
         return d.Style;
-    })/*
+    })*//*
     .key(function(d) { return d.Brand; })
     .key(function(d) { 
         return Math.trunc(parseFloat(d.Stars)); })*/

@@ -753,10 +753,7 @@ li.citation{
   position: relative;
   width: 20.5rem;
 }
-.demo__header {
-  height: 6rem;
-  background: #002942;
-}
+
 .demo__content {
   overflow: hidden;
   position: relative;
@@ -826,15 +823,7 @@ li.citation{
   font-weight: bold;
   color: #fff;
 }
-.demo__card__btm {
-  height: 11.5rem;
-  background: #FFFFFF;
-}
-.demo__card__we {
-  text-align: center;
-  font-size: 2.2rem;
-  line-height: 11.5rem;
-}
+
 .demo__card__choice {
   position: absolute;
   border-radius: 10px;
@@ -869,12 +858,7 @@ li.citation{
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
 }
-.demo__card__choice.m--reject {
-  background: #FF945A;
-}
-.demo__card__choice.m--like {
-  background: #B1DA96;
-}
+
 .demo__card__choice.m--like:after {
   -webkit-transform: scaleY(-1);
           transform: scaleY(-1);
@@ -888,10 +872,6 @@ li.citation{
   height: 80%;
   cursor: -webkit-grab;
   cursor: grab;
-}
-.demo__tip {
-  text-align: center;
-  font-size: 2.2rem;
 }
 
 .profile-margin {

@@ -38,3 +38,7 @@ Other References
 + Spotify Icon - https://www.flaticon.com/free-icon/spotify_174872
 
 + Stack Overflow - https://stackoverflow.com/company/logos
+
++ Observable - https://www.google.com/search?q=observable+icon&safe=strict&rlz=1C1CHBF_enUS825US825&sxsrf=ALeKk00JZoGVLqhHNOUQo4bjpMSUJa4mxA:1593040399653&tbm=isch&source=iu&ictx=1&fir=nxK4U3hFWzgFPM%252Cm6jCB4waESzFmM%252C_&vet=1&usg=AI4_-kQ2sO3wFdCGaNbi3zFgJ6nB6uBOZQ&sa=X&ved=2ahUKEwjV4Ij5yZvqAhUO5awKHfM4C0sQ9QEwAnoECAcQFw#imgrc=nxK4U3hFWzgFPM
+
++ Codepen - https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.iconfinder.com%2Ficons%2F167634%2Fcodepen_icon&psig=AOvVaw2qtqsXa8O4MF2VFPz7dPTq&ust=1593126876971000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOCIjZ7Km-oCFQAAAAAdAAAAABAD
